@@ -6,7 +6,7 @@
 /*   By: agougaut <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/06 10:54:24 by agougaut          #+#    #+#             */
-/*   Updated: 2016/08/06 11:38:17 by agougaut         ###   ########.fr       */
+/*   Updated: 2016/08/06 14:21:55 by agougaut         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,45 +20,35 @@ int		ft_putchar(char c)
 
 void	colle(int x, int y)
 {
-	int tmpx;
-	int tmpy;
-	
-	tmpx = 0;
-	tmpy = 0;
+	int tx;
+	int ty;
 
-	while(tmpy <= y)
+	while (ty <= y)
 	{
-		tmpx = 0;
-		while(tmpx <= x)
+		tx = 0;
+		while (tx <= x)
 		{
-			if(((tmpx == 0) && (tmpy == 0)) || ((tmpx == x) && (tmpy == 0)))
-			{
+			if (((tx == 0) && (ty == 0)) || ((tx == x) && (ty == 0)))
 				ft_putchar('A');
-			}else if(((tmpx == 0) && (tmpy == y)) || ((tmpx == x) && (tmpy == y)))
-			{
+			else if (((tx == 0) && (ty == y)) || ((tx == x) && (ty == y)))
 				ft_putchar('C');
-			}else if(tmpy == 0 || tmpy == y )
-			{
+			else if (ty == 0 || ty == y)
 				ft_putchar('B');
-			}else if(tmpy > 0  && tmpy < y)
-			{
-				if(tmpx == 0 || tmpx == x)
-				{
+			else if (ty > 0  && ty < y)
+				if (tx == 0 || tx == x)
 					ft_putchar('B');
-				}else
-				{
+				else
 					ft_putchar(' ');
-				}	
-			}
-			tmpx++;
+			tx++;
 		}
 		ft_putchar('\n');
-		tmpy++;
+		ty++;
 	}
 }
 
-int main(void)
+int		main(void)
 {
 	colle(15, 15);
 	return (0);
 }
+
