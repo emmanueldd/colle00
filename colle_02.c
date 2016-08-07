@@ -35,6 +35,8 @@ void	colle(int x, int y)
 	int		count_x;
 	int		count_y;
 
+	x--;
+	y--;
 	count_y = 0;
 
 	while(count_y <= y)
